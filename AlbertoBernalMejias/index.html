@@ -9,6 +9,9 @@
   <script src="js/bootstrap.bundle.js" defer></script>
   <script src="js/js.js" defer></script>
   <link rel="icon" href="img/faviconact.webp" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 </head>
 <body class="bg-dark text-white">
 
@@ -45,67 +48,105 @@
     </div>
   </header>
 
-  <!-- TECNOLOGÍAS -->
-  <section class="container py-5">
-    <h2 class="text-center mb-5 fw-bold">Tecnologías</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Tarjeta genérica para cada tecnología -->
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/javalogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="Java">
-          <div class="card-body">
-            <h5 class="card-title">Java</h5>
-            <p class="card-text text-light-emphasis">Aplicaciones empresariales robustas y escalables.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/sqllogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="SQL">
-          <div class="card-body">
-            <h5 class="card-title">SQL</h5>
-            <p class="card-text text-light-emphasis">Optimización y gestión de datos eficiente.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/htmllogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="HTML">
-          <div class="card-body">
-            <h5 class="card-title">HTML</h5>
-            <p class="card-text text-light-emphasis">Estructuras web sólidas y accesibles.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/csslogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="CSS">
-          <div class="card-body">
-            <h5 class="card-title">CSS</h5>
-            <p class="card-text text-light-emphasis">Diseños atractivos y responsivos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/bslogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="Bootstrap">
-          <div class="card-body">
-            <h5 class="card-title">Bootstrap</h5>
-            <p class="card-text text-light-emphasis">Interfaces modernas y rápidas.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-dark h-100 text-center border-0 shadow-sm tech-card">
-          <img src="img/jslogo.png" class="card-img-top mx-auto mt-3" style="width:80px" alt="JavaScript">
-          <div class="card-body">
-            <h5 class="card-title">JavaScript</h5>
-            <p class="card-text text-light-emphasis">Interacciones dinámicas y funcionales.</p>
-          </div>
-        </div>
-      </div>
+  <!-- SKILLS -->
+  <section id="skills" class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Tecnologías</h2>
+
+    <!-- LENGUAJES -->
+    <div class="mb-4">
+      <h3 class="h5 mb-3 text-uppercase d-flex align-items-center gap-2">
+        <i class="bi bi-translate"></i> Lenguajes
+      </h3>
+      <ul class="skills-grid list-unstyled">
+        <li class="skill">
+          <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+          <span>HTML</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-java-plain colored" aria-hidden="true"></i>
+          <span>Java</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+          <span>CSS</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+          <span>JavaScript</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-php-plain colored" aria-hidden="true"></i>
+          <span>PHP</span>
+        </li>
+        <li class="skill">
+          <i class="bi bi-filetype-json" aria-hidden="true"></i>
+          <span>JSON</span>
+        </li>
+        <li class="skill">
+          <i class="bi bi-filetype-xml" aria-hidden="true"></i>
+          <span>XML</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- HERRAMIENTAS -->
+    <div>
+      <h3 class="h5 mb-3 text-uppercase d-flex align-items-center gap-2">
+        <i class="bi bi-wrench-adjustable-circle"></i> Herramientas
+      </h3>
+      <ul class="skills-grid list-unstyled">
+        <li class="skill">
+          <i class="devicon-laravel-plain colored" aria-hidden="true"></i>
+          <span>Laravel</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-symfony-plain" aria-hidden="true"></i>
+          <span>Symfony</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-bootstrap-plain colored" aria-hidden="true"></i>
+          <span>Bootstrap 5</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
+          <span>MySQL</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-github-original colored" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-figma-plain colored" aria-hidden="true"></i>
+          <span>Figma</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-git-plain colored" aria-hidden="true"></i>
+          <span>Git</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
+          <span>MongoDB</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-sass-original colored" aria-hidden="true"></i>
+          <span>Sass</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-express-original" aria-hidden="true"></i>
+          <span>Express JS</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-docker-plain colored" aria-hidden="true"></i>
+          <span>Docker</span>
+        </li>
+        <li class="skill">
+          <i class="devicon-react-original colored" aria-hidden="true"></i>
+          <span>React</span>
+        </li>
+      </ul>
     </div>
   </section>
+
 
   <!-- CTA CV -->
   <section class="py-5 bg-primary text-center text-white">

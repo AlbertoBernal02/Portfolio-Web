@@ -300,3 +300,54 @@ header.old, .carousel, .carousel-item, .carousel-img,
   background: rgba(220, 53, 69, .25) !important;
   border: 1px solid rgba(220,53,69,.45);
 }
+
+/* ===== Skills (iconos + etiquetas) ===== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  align-items: center;
+}
+.skill {
+  width: 90px;                 /* bloque compacto */
+  text-align: center;
+}
+.skill i {
+  font-size: 42px;             /* tamaño del icono */
+  line-height: 1;
+  display: block;
+}
+.skill span {
+  display: block;
+  margin-top: .4rem;
+  font-size: .8rem;
+  color: var(--text-1, #b5c0d0);
+}
+/* Asegura buen contraste para Symfony en tema oscuro */
+.skill i[class*="symfony"] { color: #fff; }
+
+/* Badges para JSON/XML si no hay icono de marca */
+.file-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: .6rem;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .5px;
+  color: #e8edf4;
+}
+
+/* Modo oscuro coherente si no tienes variables */
+[data-bs-theme="dark"] .skill span { color: var(--text-1, #b5c0d0); }
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+  .skill { width: 76px; }
+  .skill i { font-size: 36px; }
+  .file-badge { width: 38px; height: 38px; font-size: .8rem; }
+}
