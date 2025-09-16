@@ -40,11 +40,24 @@
   <header class="about-hero py-5 border-bottom">
     <div class="container">
       <div class="row align-items-center g-4">
-        <div class="col-12 col-md-4 text-center">
-          <div class="avatar-xl shadow-lg rounded-4 overflow-hidden mx-auto">
-            <img src="img/fotocv.JPEG" alt="Foto de Alberto Bernal" class="w-100 h-100 object-fit-cover">
-          </div>
+      <div class="col-12 col-md-4 text-center">
+        <div class="rounded-circle overflow-hidden mx-auto shadow-lg"
+            style="width:250px;height:250px; position:relative;">
+          <img
+            src="img/fotocv.JPEG"
+            alt="Foto de Alberto Bernal"
+            style="
+              position:absolute;                /* control total del encuadre */
+              left:50%; top:10%;                /* mismo punto que usabas (50% 10%) */
+              width:200%; height:200%;          /* base grande para que al reducir siga cubriendo */
+              max-width:none;                   /* evita límites de Bootstrap */
+              object-fit:cover;
+              transform: translate(-50%,-10%) scale(.50);  /* zoom-out real */
+              transform-origin: 50% 10%;
+              display:block;
+            ">
         </div>
+      </div>
         <div class="col-12 col-md-8">
           <h1 class="display-5 fw-bold mb-2">Sobre mí</h1>
           <p class="lead text-light-emphasis mb-4">
@@ -203,161 +216,188 @@
         </div>
       </section>
 
-      <!-- Stack & ecosistema -->
-      <section class="mt-5">
-        <h2 class="h4 mb-3">Stack & ecosistema</h2>
-        <div class="row g-3">
-          <div class="col-12 col-lg-4">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Backend</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>PHP 8 · Symfony 6 (controllers, services, DTOs, events)</li>
-                  <li>Laravel 10 (auth, policies, mailables, queues)</li>
-                  <li>Java · patrones (services, repositorios)</li>
-                  <li>REST · JSON · JWT/Session</li>
-                </ul>
-              </div>
-            </div>
+ <!-- Stack & forma de trabajo -->
+<section class="mt-5">
+  <h2 class="h4 mb-3">Stack & forma de trabajo</h2>
+  <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Backend</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">PHP</span><span class="chip chip-strong">Symfony</span><span class="chip chip-strong">Laravel</span><span class="chip">Java</span>
           </div>
-          <div class="col-12 col-lg-4">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Datos</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Oracle (PL/SQL, packages, vistas) · MySQL</li>
-                  <li>DBAL/Doctrine · Eloquent</li>
-                  <li>Tuning · índices · planes de ejecución</li>
-                  <li>ETL ligero y reporting (QuickReports)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Frontend & tooling</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Bootstrap 5 · DataTables · Select2</li>
-                  <li>JS modular · fetch API</li>
-                  <li>Vite/Encore · npm scripts</li>
-                  <li>CI/CD básico y control de versiones (Git)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Arquitectura por capas (controllers, services, repos, DTOs).</li>
+            <li>Patrones (DI, Strategy, Factory), middlewares y eventos.</li>
+            <li>Servicios REST, paginación, validaciones y manejo de errores.</li>
+            <li>Tareas asíncronas/colas y jobs programados.</li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <!-- APIs y endpoints destacados -->
-      <section class="mt-5">
-        <h2 class="h4 mb-3">APIs y endpoints destacados</h2>
-        <div class="row g-3">
-          <div class="col-12 col-md-6">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Logística · Shipping Status</h3>
-                <ul class="text-light-emphasis">
-                  <li><code>/api/shipping-status/status?tipo=completos|menos25|todos</code> — DataTables server-side.</li>
-                  <li>Paquete PL/SQL para cálculo de <em>PORC_LIN_PDTES</em> y filtros.</li>
-                </ul>
-                <h3 class="h6 mb-2">Packing List</h3>
-                <ul class="text-light-emphasis">
-                  <li><code>/api/expeditions/{shipmentId}/parent-packages</code> · CRUD parcial de paquetes.</li>
-                  <li><code>/api/expeditions/update-package</code> · edición en línea (alto/ancho/prof./peso).</li>
-                  <li><code>/api/expeditions/{shipmentId}/manual-lines</code> · líneas manuales + autoguardado.</li>
-                </ul>
-                <h3 class="h6 mb-2">Cierre de envío</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li><code>/api/shipment/check</code> · validaciones previas (cliente/pedido/líneas).</li>
-                  <li><code>/api/shipment/close</code> · cierre/entrega con reglas de negocio.</li>
-                </ul>
-              </div>
-            </div>
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Frontend & UX</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Bootstrap 5</span><span class="chip">DataTables</span><span class="chip">Select2</span><span class="chip">JS</span>
           </div>
-
-          <div class="col-12 col-md-6">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Material OF</h3>
-                <ul class="text-light-emphasis">
-                  <li><code>/api/material-of/pending</code> · consulta y selección.</li>
-                  <li><code>/api/material-of/resolve-barcode</code> · validación previa de código.</li>
-                  <li><code>/api/material-of/move</code> · movimiento + impresión automática.</li>
-                  <li><code>/api/material-ofExternal/pending|move</code> · versión Externo (fusionada).</li>
-                </ul>
-                <h3 class="h6 mb-2">Etiquetas (ZPL · impresoras dinámicas)</h3>
-                <ul class="text-light-emphasis">
-                  <li><code>/api/other/print-custom-label</code> · servicio común de impresión.</li>
-                  <li>Plantillas en BBDD (<code>PLPES_LABEL_TEMPLATE</code>) y defaults por vista (<code>PLPES_LABEL_DEFAULTS</code>).</li>
-                </ul>
-                <h3 class="h6 mb-2">Llegadas</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li><code>/api/arrivals/print</code> · impresión con impresora por usuario y selección de plantilla.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>UI responsivas, accesibles (ARIA) y consistentes.</li>
+            <li>Componentes reutilizables, modales y formularios “floating”.</li>
+            <li>Fetch API, control de estado ligero y toasts/notificaciones.</li>
+            <li>Buenas prácticas de rendimiento (lazy, minificación, cache).</li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <!-- Actualmente (2025) -->
-      <section class="mt-5">
-        <h2 class="h4 mb-3">Actualmente (2025)</h2>
-        <div class="row g-3 row-cols-1 row-cols-md-2">
-          <div class="col">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Migración V1 → V2 (Symfony)</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Estados de Envío con paquete PL/SQL (sustitución de vista materializada).</li>
-                  <li>Packing List v2 con DataTables, edición inline y validaciones.</li>
-                  <li>CloseShipment: alineación total con Packing List en reglas de cierre.</li>
-                </ul>
-              </div>
-            </div>
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Datos & BBDD</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">MySQL</span><span class="chip">Oracle</span><span class="chip">Eloquent</span><span class="chip">Doctrine/DBAL</span>
           </div>
-
-          <div class="col">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Impresión ZPL y plantillas</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Sistema unificado de impresión (Warehouse/Factory/Amprion/Llegadas).</li>
-                  <li>Selección de plantilla por rol, guardada en BBDD y consumo dinámico.</li>
-                  <li>Integración con validación de barcode y datos de artículo/lote.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Producción · Picadas</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Vistas de entrada/salida/servicio y externo (tipo 1–4) modernizadas.</li>
-                  <li>API <code>/api/clockin/submit</code> con reglas especiales y TOC auxiliar.</li>
-                  <li>UI sin modales, toasts dinámicos, y permisos específicos por trabajador.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card bg-dark border-0 tech-card h-100">
-              <div class="card-body">
-                <h3 class="h6 mb-2">Ecommerce · F1Collector (Laravel)</h3>
-                <ul class="text-light-emphasis mb-0">
-                  <li>Wishlist completa (modelo/controlador/vista + modal UX).</li>
-                  <li>Autenticación Fortify, modales login/registro y toasts de carrito.</li>
-                  <li>Descuento de bienvenida (listener <em>CreateWelcomeDiscount</em>), cupón en checkout y cálculo con Stripe.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Modelado relacional, migraciones y seeds.</li>
+            <li>Consultas optimizadas, índices y planes de ejecución.</li>
+            <li>PL/SQL (packages, vistas) cuando aplica.</li>
+            <li>ETL ligero y reporting.</li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">DevOps & despliegue</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Vite/Encore</span><span class="chip">npm scripts</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>CI/CD básico, builds reproducibles y entornos.</li>
+            <li>Versionado Git y flujos de ramas (PRs, code review).</li>
+            <li>Variables de entorno y secretos.</li>
+            <li>Monitoreo y logs centrados (cuando procede).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Calidad & testing</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">PHPUnit/Pest</span><span class="chip">JUnit</span><span class="chip">ESLint</span><span class="chip">PHPCS</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Pruebas unitarias y de integración.</li>
+            <li>Validación de contratos (DTOs/Requests).</li>
+            <li>Revisiones de código y convenciones.</li>
+            <li>Principios SOLID y KISS/DRY/YAGNI.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Seguridad & metodología</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Auth (JWT/Session)</span><span class="chip">CSRF/CORS</span><span class="chip">Scrum/Kanban</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Autenticación y autorización por roles/policies.</li>
+            <li>Hardening básico (validación, rate limit, headers).</li>
+            <li>Gestión de tareas, sprints y documentación ligera.</li>
+            <li>Entrega continua y foco en DX.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Soluciones destacadas (no solo APIs) -->
+<section class="mt-5">
+  <h2 class="h4 mb-3">Soluciones destacadas</h2>
+  <div class="row g-3">
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Logística · Estados de envío</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Backend</span><span class="chip">Frontend</span><span class="chip">Datos</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Listado con DataTables (server-side), filtros y exportación.</li>
+            <li>Cálculo de KPIs vía paquete PL/SQL y caché puntual.</li>
+            <li>UX con badges de estado y toasts de acción.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Packing List · Edición en línea</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Frontend</span><span class="chip">Backend</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Edición inline (alto/ancho/prof./peso) con validaciones.</li>
+            <li>Autosave, control de concurrencia y mensajes de error claros.</li>
+            <li>Persistencia con reglas de negocio y auditoría de cambios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Impresión ZPL · Plantillas dinámicas</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Backend</span><span class="chip">Integraciones</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Sistema unificado de impresión (Warehouse/Factory/Llegadas).</li>
+            <li>Plantillas en BBDD y selección por rol/vista.</li>
+            <li>Resolución de datos (artículo/lote) y validación previa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Ecommerce · F1Collector</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Laravel</span><span class="chip">UI/UX</span><span class="chip">Pagos</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Catálogo, filtros avanzados y wishlist con modales.</li>
+            <li>Auth Fortify, toasts de carrito y cupones/stripe en checkout.</li>
+            <li>Panel administrativo con roles y trazabilidad.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     </div>
       <!-- Modal Confirmar Descarga CV -->
